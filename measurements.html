@@ -1,0 +1,23 @@
+{% extends "main-template.html" %}
+
+{% block section1 %}
+    <h1>Peter's BP Readings</h1>
+
+    <ul class="measurements">
+        {% for m in measurements %}
+            <li><a rel="measurement" href="{{sitePrefix}}/measurement/{{m.id}}">
+                {{ m.systolic }}/{{ m.diastolic }}
+            </a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block section2 %}
+    <form class="new-measurement" action="{{sitePrefix}}/measurements" method="post" enctype="application/x-www-form-urlencoded">
+        <label>Add a new BP measurement:</label>
+        <input id="systolic" name="systolic" value="" placeholder="120" required="true" />
+        /
+        <input id="diastolic" name="diastolic" value="" placeholder="80" required="true" />
+        <input type="submit" value="Submit" />
+    </form>
+{% endblock %}
