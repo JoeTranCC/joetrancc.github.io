@@ -64,3 +64,16 @@ body {padding: 0;}
     margin-bottom: 50px;
     margin-top: 50px;
 }
+
+@media (max-width: 919px){
+    body div{
+        min-width: 80vw;
+    }
+
+}
+
+@media (max-width: 767px){
+    body div{
+        min-width: 100vw;
+    }
+}
